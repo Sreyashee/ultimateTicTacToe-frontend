@@ -19,7 +19,6 @@ background:
   background-blend-mode: overlay;
 }
 .box {
-  margin-top: -100px;
   background-color: rgba(182, 27, 27, 0.403); /* random color with transparency (steelblue) */
   border: 10px double #fffbcd; /* random border color from your palette */
   padding: 40px;
@@ -206,4 +205,8 @@ background:
   .close-btn {
     font-size: 1.5rem;
   }
+}
+
+.ultimate{
+  margin-top: 30px;
 }
