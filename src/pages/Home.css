@@ -1,0 +1,209 @@
+body{
+background:
+    linear-gradient(to bottom , #ffd6d6, #90a4f7c6),
+    url("data:image/svg+xml,%3Csvg width='800' height='800' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M100,300 Q150,100 300,200 T500,300 T400,500 T200,400 T100,300 Z'/%3E%3Cpath d='M400,100 Q450,200 500,150 T600,200 T550,300 T400,200 T400,100 Z'/%3E%3Cpath d='M200,600 Q300,500 400,550 T600,600 T500,700 T300,650 T200,600 Z'/%3E%3Cpath d='M50,100 Q100,200 150,150 T200,200 T180,250 T100,200 T50,100 Z'/%3E%3Cpath d='M600,400 Q650,450 700,420 T750,480 T700,520 T600,500 T600,400 Z'/%3E%3C/g%3E%3C/svg%3E");
+}
+.home-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  min-height: 100vh;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 800px 800px;
+  background-blend-mode: overlay;
+}
+.box {
+  margin-top: -100px;
+  background-color: rgba(182, 27, 27, 0.403); /* random color with transparency (steelblue) */
+  border: 10px double #fffbcd; /* random border color from your palette */
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255,255,255,0.1);
+  width: 320px; /* optional fixed width to keep neat */
+}
+
+
+.box:hover {
+  transform: scale(1.02);
+}
+
+.box h1 {
+  font-size: 2.3rem;
+  margin-bottom: 30px;
+  color: #fffce0;
+  font-family: "Merriweather", serif;
+
+
+
+
+}
+
+.box button {
+  margin: 12px;
+  padding: 14px 28px;
+  border-width: 3px;
+  border-color: #5f0832;
+    background-color: #ffffb4;
+  color: #590733;
+  border-radius: 12px;
+  font-family: "Merriweather", serif;
+  cursor: pointer;
+  font-size: 1.3rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.box button:hover {
+  background-color: rgb(183, 6, 83);
+  
+  color: #ffffb4;
+  border-color: #ffffb4;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(44, 53, 49, 0.7); /* semi-transparent dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* above everything */
+}
+
+.modal-popup {
+  background-color: #c76e7adc; /* use your transparent box color */
+  padding: 50px 40px;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  min-width: 300px;
+  text-align: center;
+  color: #ffffb4; /* your light color */
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  color: #ffcb9a;
+  cursor: pointer;
+  font-weight: bold;
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #d9b08c;
+}
+.modal-popup input.name-input {
+  display: block;
+  width: 100%;
+  margin: 12px 0 6px 0;
+  padding: 10px;
+  border-radius: 8px;
+  border: solid 2px #590733;
+  font-size: 1rem;
+}
+
+.enter-btn {
+  margin-top: 10px;
+  padding: 8px 24px;
+  border: solid 2px #590733;
+  background-color: #ffffb4;
+  color: #590733;
+  border-radius: 12px;
+  font-family: "Merriweather", serif;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.enter-btn:hover{
+   background-color: rgb(183, 6, 83);
+  color: #ffffb4;;
+   box-shadow: 0 0 15px rgba(34, 3, 3, 0.521);
+}
+@media (max-width: 768px) {
+  .home-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 100px 20px;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  background-image:
+    linear-gradient(to bottom, #ffd6d6, #90a4f7c6),
+    url("data:image/svg+xml,%3Csvg width='1000' height='1000' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Cpath d='M100,300 Q150,100 300,200 T500,300 T400,500 T200,400 T100,300 Z'/%3E%3Cpath d='M400,100 Q450,200 500,150 T600,200 T550,300 T400,200 T400,100 Z'/%3E%3Cpath d='M200,600 Q300,500 400,550 T600,600 T500,700 T300,650 T200,600 Z'/%3E%3Cpath d='M50,100 Q100,200 150,150 T200,200 T180,250 T100,200 T50,100 Z'/%3E%3Cpath d='M600,400 Q650,450 700,420 T750,480 T700,520 T600,500 T600,400 Z'/%3E%3C/g%3E%3C/svg%3E");
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: overlay;
+}
+
+  .box {
+    width: 70%;
+    padding: 30px;
+    margin-top: -60px;
+  }
+
+  .box h1 {
+    font-size: 1.8rem;
+  }
+
+  .box button {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+
+  .modal-popup {
+    width: 55%;
+    padding: 30px 20px;
+    min-width: 250px;
+  }
+
+  .modal-popup input.name-input {
+    font-size: 0.95rem;
+   padding-left:3px;
+    padding-right: 1px;
+  }
+
+  .enter-btn {
+    padding: 8px 20px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .box h1 {
+    font-size: 1.5rem;
+  }
+
+  .box button {
+    font-size: 0.9rem;
+  }
+
+  .modal-popup {
+    padding: 25px 16px;
+  }
+
+  .close-btn {
+    font-size: 1.5rem;
+  }
+}

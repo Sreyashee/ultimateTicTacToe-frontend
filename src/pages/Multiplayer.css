@@ -1,0 +1,169 @@
+/* Multiplayer.css */
+
+.multiplayer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.multiplayer-container h2 {
+  color: rgba(148, 13, 13, 0.784);
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.connection-status {
+  padding: 8px 16px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(182, 27, 27, 0.403);
+}
+
+.connection-status[data-status="connected"] {
+  background-color: rgba(182, 27, 27, 0.403);
+  color: white;
+}
+
+.connection-status[data-status="disconnected"],
+.connection-status[data-status="reconnecting"] {
+  background-color: #f44336;
+  color: white;
+}
+
+.player-info {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.player {
+  padding: 10px 15px;
+  
+  background-color: #e9e9e9;
+  font-weight: bold;
+  text-align: center;
+  flex: 1;
+  box-shadow: 0 2px 4px rgba(148, 13, 13, 0.784);
+  border-radius: 30px;
+}
+
+.player.you {
+  background-color: rgba(148, 13, 13, 0.784);
+  color: white;
+}
+
+.status {
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: rgba(148, 13, 13, 0.784);
+  min-height: 27px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 30px;
+}
+
+.cell-container {
+  aspect-ratio: 1/1;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: #ffffb4;
+  color: #662e2e;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #662e2e;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  box-shadow: 0 0 10px rgba(255, 182, 193, 0.2);
+}
+
+.cell:hover:not(:disabled) {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+.cell:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.cell.x {
+  color: #662e2e;
+}
+
+.cell.o {
+  color: #662e2e;
+}
+
+.play-again {
+   margin-top: 30px;
+  padding: 10px 20px;
+  background-color: #ffffb4;
+  border: 2px solid #590733;
+  color: #590733;
+  border-radius: 10px;
+  font-family: "Merriweather", serif;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.play-again:hover {
+    background-color: #590733;
+  color: #ffffb4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .multiplayer-container h2 {
+    font-size: 20px;
+  }
+  
+  .player-info {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .player {
+    padding: 8px 12px;
+  }
+  
+  .cell {
+    font-size: 28px;
+  }
+}
+
+/* Animation for reconnecting status */
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+.connection-status[data-status="reconnecting"] {
+  animation: pulse 1.5s infinite;
+}
