@@ -184,14 +184,24 @@ const UltimateTicTacToe = () => {
   return (
     <div className="ultimate-container">
       <h2 className='message'>{message} <GiClover style={{width:'2 rem', margin:'-5px'}}/></h2>
-      <div>
-        <label className='difficulty'>Difficulty: </label>
-        <select className='difficulty-dropdown-ultimate' value={difficulty} onChange={e => setDifficulty(e.target.value)}>
-          <option value="easy">Easy</option>
-          <option value="medium">Medium</option>
-          <option value="hard">Hard</option>
-        </select>
-      </div>
+<div className="modal-overlay">
+          <div className="modal-popup">
+            <h3>Select Difficulty</h3>
+            <select
+              value={difficulty}
+              onChange={(e) => {
+                setDifficulty(e.target.value);
+                setShowPopup(false);
+              }}
+              className="difficulty-dropdown"
+            >
+              <option value="">-- Choose --</option>
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+          </div>
+        </div>
       {!overallWinner && <p>Next Player: {player}</p>}
       <div className="big-board">
         {boards.map((board, index) => renderBoard(board, index))}
